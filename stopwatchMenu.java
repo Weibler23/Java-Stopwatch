@@ -3,6 +3,9 @@
 // Store all menu screens throughout the program
 // Created: 8/11/22
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter; 
+
 public class stopwatchMenu {
     private static void frame (int num, boolean newLine) {
 		for (int i = 1; i <= num; i ++){
@@ -21,10 +24,10 @@ public class stopwatchMenu {
 		System.out.print("Input: ");
     }
 
-    public void stopwatchScreen () {
+    public void stopwatchScreen (LocalTime startTime) {
         frame(10, true);
-        System.out.print("|Start Time: |\n" +
-                         "|Current Time: \n");
+        System.out.format("|Start Time: %-20s|%n", startTime); 
+        System.out.format("|Current Time: $-18s|%n", java.time.LocalTime.now());
         frame(10,true);
         System.out.print("|Enter (1) to enter a lap |\n" +
                          "|Enter (2) to stop        |\n");

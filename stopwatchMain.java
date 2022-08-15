@@ -25,6 +25,7 @@ public class stopwatchMain
       switch(sWInput.userInput) {
         case 1:
         System.out.println(" DEBUG:: User chose option 1 ");
+        sWMenu.stopwatchScreen(java.time.LocalTime.now());
         break;
 
         case 2:
