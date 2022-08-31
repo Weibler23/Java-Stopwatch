@@ -7,9 +7,13 @@ public class stopwatchMain
 {
   public static void main(String[] args) throws Exception {
     boolean stopwatchPRRepeat = true;
+    boolean stopwatchRun = true;
 
     // Implement organization class
     organization org = new organization();
+
+    // Implement stopwatch class
+    stopwatch sWatch = new stopwatch();
 
     // Implement stopwatchMenu class
     stopwatchMenu sWMenu = new stopwatchMenu();
@@ -19,19 +23,16 @@ public class stopwatchMain
 
     do {
       org.ClearScreen();
-      System.out.println(" DEBUG:: Running 'stopwatchMain.java' ");
       sWMenu.startScreen();
-      sWInput.getMenuInput(3,1);
-      switch(sWInput.userInput) {
+      sWInput.getMenuInput(3, 1);
+      switch (sWInput.userInput) {
         case 1:
-        System.out.println(" DEBUG:: User chose option 1 ");
-        sWMenu.stopwatchScreen(java.time.LocalTime.now());
-        break;
-
-        case 2:
-        System.out.println(" DEBUG:: User chose option 2 ");
+        sWatch.start();
         break;
         
+        case 2:
+        break;
+
         case 3:
         System.out.println("* User chose to exit the program *\n");
         stopwatchPRRepeat = false;
